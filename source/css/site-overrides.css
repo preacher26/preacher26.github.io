@@ -18,3 +18,19 @@
   outline: 2px solid var(--primary-color);
   outline-offset: 2px;
 }
+
+/* Vivia positions this 60x60 wrapper over the navbar's top-right corner.
+ * When RSS is disabled, it overlaps the theme button even while the enclosed
+ * back-to-top button is hidden. Let pointer events pass through the wrapper;
+ * the visible child button remains independently clickable. */
+.back-to-top-wrapper {
+  pointer-events: none;
+}
+
+.back-to-top-btn {
+  pointer-events: auto;
+}
+
+.back-to-top-btn.hide {
+  pointer-events: none;
+}
