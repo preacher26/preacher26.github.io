@@ -1,0 +1,20 @@
+#theme-btn {
+  appearance: none;
+  -webkit-appearance: none;
+  border: 0;
+  padding: 0;
+  background: transparent;
+}
+
+#theme-btn:hover {
+  background: var(--btn-text-hover);
+}
+
+#theme-btn:active {
+  background: var(--btn-text-active);
+}
+
+#theme-btn:focus-visible {
+  outline: 2px solid var(--primary-color);
+  outline-offset: 2px;
+}
