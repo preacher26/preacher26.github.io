@@ -1,0 +1,13 @@
+.DS_Store
+Thumbs.db
+db.json
+*.log
+node_modules/
+public/
+.deploy*/
+_multiconfig.yml
+
+# Keep the 14 MB source photo locally; the optimized banner is versioned.
+/DSC_2205_v1.jpg
+/avatar.webp
+/icon.png

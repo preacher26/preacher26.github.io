@@ -1,0 +1,72 @@
+# Navigation. About and RSS stay hidden until their content/services exist.
+menu:
+  首页: /
+  归档: /archives
+
+home:
+  style: default
+
+favicon: /images/favicon.png
+
+# The local photo is used as an optimized homepage banner.
+banner:
+  enable: true
+  url: /images/banner.jpg
+  position: center
+  onAllPages: false
+
+# Disable Vivia's public theme-preview color control panel.
+previewMode: false
+
+# Vivia's official default blue hue. The first visit defaults to light mode.
+hue: 250
+
+avatar: /images/avatar.webp
+author: Preacher26
+subtitle: ''
+links:
+  - name: GitHub
+    icon: fa-brands fa-github
+    url: https://github.com/preacher26
+  - name: Bilibili
+    icon: fa-brands fa-bilibili
+    url: https://space.bilibili.com/340224618
+
+sidebar:
+  position: left
+  widgets:
+    normal:
+      - profile
+    sticky:
+      - category
+      - tag
+
+archive_type: monthly
+recent_posts_limits: 5
+categories:
+  max_depth: 2
+
+comment:
+  valine:
+    enable: false
+    appId:
+    appKey:
+    placeholder: 欢迎留言
+    pageSize: 10
+    highlight: true
+    serverURLs:
+  twikoo:
+    enable: false
+    envID:
+    region:
+    path: location.pathname
+    lang: zh-CN
+  waline:
+    enable: false
+    serverURL:
+
+gauges_analytics: false
+google_analytics: false
+baidu_analytics: false
+
+copyright: by Preacher26
