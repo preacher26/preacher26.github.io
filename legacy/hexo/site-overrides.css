@@ -1,0 +1,243 @@
+#theme-btn {
+  appearance: none;
+  -webkit-appearance: none;
+  border: 0;
+  padding: 0;
+  background: transparent;
+}
+
+#theme-btn:hover {
+  background: var(--btn-text-hover);
+}
+
+#theme-btn:active {
+  background: var(--btn-text-active);
+}
+
+#theme-btn:focus-visible {
+  outline: 2px solid var(--primary-color);
+  outline-offset: 2px;
+}
+
+/* Vivia positions this 60x60 wrapper over the navbar's top-right corner.
+ * When RSS is disabled, it overlaps the theme button even while the enclosed
+ * back-to-top button is hidden. Let pointer events pass through the wrapper;
+ * the visible child button remains independently clickable. */
+.back-to-top-wrapper {
+  pointer-events: none;
+}
+
+.back-to-top-btn {
+  pointer-events: auto;
+}
+
+.back-to-top-btn.hide {
+  pointer-events: none;
+}
+
+/* hexo-renderer-marked wraps images in a figure when figcaption is enabled. */
+.article-entry figure:not(.rich-embed):not(.highlight) {
+  margin: 1.6em 0;
+  text-align: center;
+}
+
+.article-entry figure:not(.rich-embed):not(.highlight) > figcaption {
+  margin-top: 0.65em;
+  color: var(--article-text);
+  font-size: 0.85em;
+  line-height: 1.5;
+  opacity: 0.68;
+}
+
+/* Rich Markdown additions: responsive embeds, link cards and GFM callouts. */
+.article-entry .rich-embed {
+  margin: 1.6em 0;
+}
+
+.article-entry .rich-embed .video-container {
+  margin-bottom: 0.6em;
+}
+
+.article-entry .rich-embed figcaption {
+  color: var(--article-text);
+  font-size: 0.9em;
+  text-align: center;
+  opacity: 0.78;
+}
+
+.article-entry .rich-link-card {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin: 1.2em 0;
+  padding: 16px 18px;
+  border: 1px solid var(--border-color, rgba(127, 127, 127, 0.25));
+  border-radius: 12px;
+  background: var(--blockquote-bg);
+  text-decoration: none;
+}
+
+.rich-link-card-brand {
+  flex: 0 0 auto;
+  padding: 5px 8px;
+  border-radius: 7px;
+  color: #fff;
+  background: #24292f;
+  font-size: 0.78em;
+  font-weight: 700;
+}
+
+.rich-link-card-content {
+  display: flex;
+  min-width: 0;
+  flex: 1;
+  flex-direction: column;
+}
+
+.rich-link-card-content strong {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.rich-link-card-content small {
+  margin-top: 3px;
+  opacity: 0.7;
+}
+
+.rich-link-card-arrow {
+  font-size: 1.2em;
+}
+
+.article-entry blockquote.callout {
+  --callout-color: #0969da;
+  box-sizing: border-box;
+  gap: 0;
+  padding: 16px 18px;
+  border: 1px solid color-mix(in srgb, var(--callout-color) 28%, transparent);
+  border-left: 4px solid var(--callout-color);
+  background: color-mix(in srgb, var(--callout-color) 8%, var(--blockquote-bg));
+}
+
+.article-entry blockquote.callout-tip {
+  --callout-color: #1a7f37;
+}
+
+.article-entry blockquote.callout-important {
+  --callout-color: #8250df;
+}
+
+.article-entry blockquote.callout-warning {
+  --callout-color: #d97706;
+}
+
+.article-entry blockquote.callout-caution {
+  --callout-color: #cf222e;
+}
+
+.article-entry .callout-title {
+  display: flex;
+  align-items: center;
+  gap: 0.55em;
+  margin: 0 0 0.75em;
+  color: var(--callout-color);
+  font-size: 1em;
+  font-weight: 700;
+  line-height: 1.35;
+}
+
+.article-entry .callout-icon {
+  width: 1.25em;
+  height: 1.25em;
+  flex: 0 0 auto;
+  fill: none;
+  stroke: currentColor;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 2;
+}
+
+.article-entry blockquote.callout > p:not(.callout-title) {
+  margin: 0.65em 0;
+}
+
+.article-entry blockquote.callout > :last-child {
+  margin-bottom: 0;
+}
+
+.article-entry .katex-display {
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding: 0.6em 0;
+}
+
+/* Give code blocks a clearer boundary and keep long lines scrollable. */
+.article-entry .highlight,
+.article-entry > pre {
+  box-sizing: border-box;
+  max-width: 100%;
+  border: 1px solid rgb(127 127 127 / 0.18);
+  font-size: 0.9em;
+  line-height: 1.65;
+  scrollbar-width: thin;
+}
+
+.article-entry .highlight .gutter {
+  width: 1%;
+  white-space: nowrap;
+  border-right: 1px solid rgb(127 127 127 / 0.18);
+  user-select: none;
+}
+
+.article-entry .highlight .gutter pre {
+  width: auto;
+  padding-right: 0.75em;
+}
+
+.article-entry .highlight .code pre {
+  padding-left: 0.75em;
+}
+
+/* A blockquote is a flex column in Vivia. Explicit sizing prevents its code
+ * children from using their min-content width and overflowing the article. */
+.article-entry blockquote {
+  min-width: 0;
+}
+
+.article-entry blockquote > .highlight,
+.article-entry blockquote > pre {
+  box-sizing: border-box;
+  width: 100%;
+  min-width: 0;
+  margin: 0.35em 0 1.2em;
+  background: var(--article-code-bg);
+  box-shadow: 0 2px 10px rgb(0 0 0 / 0.08);
+}
+
+.article-entry blockquote > .highlight table {
+  min-width: 100%;
+}
+
+.article-entry blockquote.callout > .highlight,
+.article-entry blockquote.callout > pre {
+  margin-top: 0.15em;
+  padding: 12px 14px;
+  border-color: rgb(127 127 127 / 0.22);
+  background: var(--article-block);
+  box-shadow: none;
+}
+
+@media (max-width: 600px) {
+  .article-entry .rich-link-card {
+    padding: 13px 14px;
+  }
+
+  .article-entry blockquote > .highlight,
+  .article-entry blockquote > pre {
+    font-size: 0.82em;
+  }
+
+  .article-entry blockquote.callout {
+    padding: 14px;
+  }
+}
