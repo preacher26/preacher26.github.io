@@ -1,5 +1,6 @@
 import type {
 	ExpressiveCodeConfig,
+	FriendLinksConfig,
 	LicenseConfig,
 	NavBarConfig,
 	ProfileConfig,
@@ -37,6 +38,19 @@ export const navBarConfig: NavBarConfig = {
 		LinkPreset.Home,
 		LinkPreset.Archive,
 		LinkPreset.About,
+		{
+			name: "友链",
+			url: "/friends/",
+		},
+	],
+};
+
+export const friendLinksConfig: FriendLinksConfig = {
+	links: [
+		{
+			name: "信号",
+			url: "https://krgm.moe/",
+		},
 	],
 };
 
